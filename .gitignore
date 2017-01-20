@@ -3,7 +3,6 @@
 .env
 # The data dir is intended only for temporary image files
 # before we push them to S3
-data
 build
 
 ### Node ###
