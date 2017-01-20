@@ -14,5 +14,9 @@ function mapService($log) {
 
   //TODO: Do we need any other data or methods?
 
+  service.getRoom = function(x,y) {
+    return service.mapData[`${x},${y}`];
+  };
+
   return service;
 }
