@@ -21,6 +21,9 @@ $border-size: 2vw;
 }
 
 .player-icon {
+  width: $grid-size / 4;
+  height: $grid-size / 4;
+  border-radius: $grid-size / 8;
   background: red;
 }
 

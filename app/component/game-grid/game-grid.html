@@ -6,9 +6,9 @@
         wt: cell.walls.indexOf('top') !== -1,
         wr: cell.walls.indexOf('right') !== -1,
         wb: cell.walls.indexOf('bottom') !== -1,
-        wl: cell.walls.indexOf('left') !== -1,
-        'player-icon': cell.hasPlayer
+        wl: cell.walls.indexOf('left') !== -1
       }">
+      <div ng-show="cell.hasPlayer" class="player-icon"></div>
     </div>
   </div>
 </section>
