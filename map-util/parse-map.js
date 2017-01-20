@@ -19,7 +19,7 @@ let rows = (lines.length - 1) / 2;
 
 let cols = (lines[0].length - 1) / 3;
 
-console.log('map dimensions -> cols:', cols, 'rows:', rows);
+// console.log('map dimensions -> cols:', cols, 'rows:', rows);
 
 let map = {};
 
