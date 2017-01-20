@@ -10,7 +10,20 @@ function mapService($log) {
 
   let service = {};
 
+  //TODO: mapData can be private, exposed through getRoom.
   service.mapData = require('../data/map.json');
+  let maxX = 0;
+  let maxY = 0;
+
+  let keys = Object.keys(service.mapData);
+  keys.forEach( key => {
+    let coords = key.split(',');
+    if(coords[0] > maxX) maxX = coords[0];
+    if(coords[1] > maxY) maxY = coords[1];
+  });
+
+  service.width = maxX + 1;
+  service.height = maxY + 1;
 
   service.getRoom = function(x,y) {
     return service.mapData[`${x},${y}`];

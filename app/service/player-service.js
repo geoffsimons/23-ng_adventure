@@ -16,6 +16,9 @@ function playerService($q, $log, mapService) {
     hp: 10
   };
 
+  let startRoom = mapService.getRoom(player.x, player.y);
+  startRoom.hasPlayer = true;
+
   /** direction: top | right | bottom | left **/
   service.movePlayer = function(direction) {
     $log.debug('playerService.movePlayer()');
@@ -29,6 +32,10 @@ function playerService($q, $log, mapService) {
       if(direction === 'right')  player.x++;
       if(direction === 'bottom') player.y++;
       if(direction === 'left')   player.x--;
+      delete room.hasPlayer;
+
+      room = mapService.getRoom(player.x, player.y);
+      room.hasPlayer = true;
 
       //TODO: Q: Is there something more interesting to resolve?
       return resolve();

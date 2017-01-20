@@ -1,0 +1,52 @@
+$grid-size: 50vw;
+$border-size: 2vw;
+
+.game-grid {
+  width: $grid-size;
+  height: $grid-size;
+  margin: 0 auto;
+  background: #b1b1b1;
+}
+
+.cell-container {
+  display: inline-block;
+  background: blue;
+}
+
+.grid-cell {
+  width: $grid-size / 3;
+  height: $grid-size / 3;
+  float:left;
+  box-sizing: border-box;
+}
+
+.player-icon {
+  background: red;
+}
+
+.junk {
+  top: $border-size;
+  left: $border-size;
+  width: ($grid-size / 3) - ($border-size * 2);
+  height: ($grid-size / 3) - ($border-size * 2);
+  width: 10vw;
+  height: 10vw;
+}
+
+$border-room: $border-size solid #222;
+
+.wt {
+  border-top: $border-room;
+}
+
+.wr {
+  border-right: $border-room;
+}
+
+.wb {
+  border-bottom: $border-room;
+}
+
+.wl {
+  border-left: $border-room;
+}

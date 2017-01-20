@@ -12,3 +12,4 @@ require('./service/player-service.js');
 require('./component/room/room.js');
 require('./component/player-info/player-info.js');
 require('./component/game-pad/game-pad.js');
+require('./component/game-grid/game-grid.js');

@@ -1,0 +1,14 @@
+<section class="game-grid">
+  <div class="grid-row" ng-repeat="row in gameGridCtrl.getGrid()">
+    <div ng-repeat="cell in row"
+      ng-class="{
+        'grid-cell': true,
+        wt: cell.walls.indexOf('top') !== -1,
+        wr: cell.walls.indexOf('right') !== -1,
+        wb: cell.walls.indexOf('bottom') !== -1,
+        wl: cell.walls.indexOf('left') !== -1,
+        'player-icon': cell.hasPlayer
+      }">
+    </div>
+  </div>
+</section>
