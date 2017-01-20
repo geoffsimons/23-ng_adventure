@@ -16,7 +16,6 @@ function RoomController($log, playerService, mapService) {
 
   this.player = playerService.player;
   this.hasWall = function(side) {
-    $log.debug('hasWall()',side);
     let room = mapService.getRoom(this.player.x, this.player.y);
     return room.walls.indexOf(side) !== -1;
   };
