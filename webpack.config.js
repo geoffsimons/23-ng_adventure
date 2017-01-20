@@ -37,6 +37,10 @@ module.exports = {
         loader: ExtractTextPlugin.extract('style', 'css!resolve-url!sass?sourceMap')
       },
       {
+        test: /\.json$/,
+        loader: 'json-loader'
+      },
+      {
         test: /\.(woff|ttf|svg|eot).*/,
         loader: 'url?limit=10000&name=font/[hash].[ext]'
       }

@@ -10,7 +10,10 @@ function mapService($log) {
 
   let service = {};
 
-  service.mapData = require('../data/map.json');
+  // service.mapData = require('../data/map.json');
+  service.mapData = {
+    '0,0': { walls: ['top','left','bottom']}
+  };
 
   //TODO: Do we need any other data or methods?
 
