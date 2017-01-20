@@ -6,4 +6,4 @@ const angular = require('angular');
 
 angular.module('mazeRace', []);
 
-// require('./service/map-service');
+require('./service/map-service');
