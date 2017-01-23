@@ -36,6 +36,13 @@ function GameGridController($log, playerService, mapService) {
     let gx = Math.max(0, x - radius);
     let gy = Math.max(0, y - radius);
 
+    gx = Math.min(gx, mapService.width - width);
+    gy = Math.min(gy, mapService.height - height);
+
+    $log.debug('map dims', mapService.width, mapService.height);
+    $log.debug('grid dims', width, height);
+    $log.debug('gx,gy',gx,gy);
+
     //TODO: There are bogus rooms showing up on the right side.
 
     // let grid = [];
