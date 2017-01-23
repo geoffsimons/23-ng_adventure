@@ -25,9 +25,16 @@ function playerService($q, $log, mapService) {
     $log.debug('playerService.movePlayer()');
     return new $q( (resolve, reject) => {
       let room = mapService.getRoom(player.x, player.y);
-      if(room.walls.indexOf(direction) !== -1) {
+      if(room.sides[direction] === 'wall') {
         //TODO: player.hp--
         return reject('Ran into a wall');
+      }
+
+      if(room.sides[direction] === 'door') {
+        if(player.items.indexOf('K') === -1) {
+          return reject('Need key to go through doors');
+        }
+        $log.debug('Player had key to access door');
       }
       if(direction === 'top')    player.y--;
       if(direction === 'right')  player.x++;

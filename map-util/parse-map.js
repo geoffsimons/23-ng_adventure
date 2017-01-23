@@ -24,22 +24,26 @@ for(let x = 0; x < cols; x++) {
     let leftChar = lines[midIndex][(x * 3)];
     let rightChar = lines[midIndex][(x * 3) + 3];
 
-    let walls = [];
-    if(topChar   === '-') walls.push('top');
-    if(rightChar === '|') walls.push('right');
-    if(botChar   === '-') walls.push('bottom');
-    if(leftChar  === '|') walls.push('left');
+    let sides = {
+      top:    'clear',
+      right:  'clear',
+      bottom: 'clear',
+      left:   'clear'
+    };
 
-    let doors = [];
-    if(topChar   === '$') doors.push('top');
-    if(rightChar === '$') doors.push('right');
-    if(botChar   === '$') doors.push('bottom');
-    if(leftChar  === '$') doors.push('left');
+    if(topChar   === '-') sides.top    = 'wall';
+    if(rightChar === '|') sides.right  = 'wall';
+    if(botChar   === '-') sides.bottom = 'wall';
+    if(leftChar  === '|') sides.left   = 'wall';
+
+    if(topChar   === '$') sides.top    = 'door';
+    if(rightChar === '$') sides.right  = 'door';
+    if(botChar   === '$') sides.bottom = 'door';
+    if(leftChar  === '$') sides.left   = 'door';
     let cell = {
       x,
       y,
-      walls,
-      doors
+      sides
     };
     let contentsChar = lines[midIndex][(x * 3) + 1];
     if(contentsChar !== ' ') cell.contents = contentsChar;

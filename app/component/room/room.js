@@ -3,6 +3,9 @@
 const angular = require('angular');
 const mazeRace = angular.module('mazeRace');
 
+//TODO: Refactor room -> cell
+//TODO: ACTUALLY, not even using this module anymore.
+
 mazeRace.component('room', {
   template: require('./room.html'),
   controller: 'RoomController',
