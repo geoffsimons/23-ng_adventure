@@ -19,9 +19,11 @@ function mapService($log) {
   let keys = Object.keys(service.mapData);
   keys.forEach( key => {
     let coords = key.split(',');
-    if(coords[0] > maxX) maxX = coords[0];
-    if(coords[1] > maxY) maxY = coords[1];
+    if(coords[0] > maxX) maxX = Number(coords[0]);
+    if(coords[1] > maxY) maxY = Number(coords[1]);
   });
+
+  $log.debug('mapService: maxX,maxY',maxX,maxY);
 
   service.width = maxX + 1;
   service.height = maxY + 1;
