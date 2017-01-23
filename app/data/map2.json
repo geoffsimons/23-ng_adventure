@@ -18,8 +18,7 @@
       "right": "wall",
       "bottom": "clear",
       "left": "wall"
-    },
-    "contents": "S"
+    }
   },
   "0,2": {
     "x": 0,
