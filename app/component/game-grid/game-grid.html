@@ -8,7 +8,10 @@
         wb: cell.walls.indexOf('bottom') !== -1,
         wl: cell.walls.indexOf('left') !== -1
       }">
-      <div ng-show="cell.hasPlayer" class="player-icon"></div>
+      <span ng-show="cell.contents">{{ cell.contents }}</span>
+      <div ng-show="cell.hasPlayer" class="player-icon">
+        {{ gameGridCtrl.player.items.join() }}
+      </div>
     </div>
   </div>
 </section>

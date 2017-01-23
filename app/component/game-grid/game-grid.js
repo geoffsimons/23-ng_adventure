@@ -26,6 +26,8 @@ function GameGridController($log, playerService, mapService) {
     this.grid.push([]); //Push an empty row.
   }
 
+  this.player = playerService.player;
+
   this.getGrid = function() {
     $log.debug('gameGridCtrl.getGrid()', ++calls);
     let x = playerService.player.x;

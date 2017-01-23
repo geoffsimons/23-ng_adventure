@@ -11,7 +11,8 @@ function mapService($log) {
   let service = {};
 
   //TODO: mapData can be private, exposed through getRoom.
-  service.mapData = require('../data/map.json');
+  // service.mapData = require('../data/map.json');
+  service.mapData = require('../data/map2.json');
   let maxX = 0;
   let maxY = 0;
 

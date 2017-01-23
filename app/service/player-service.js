@@ -13,7 +13,8 @@ function playerService($q, $log, mapService) {
   let player = service.player = {
     x: 0,
     y: 0,
-    hp: 10
+    hp: 10,
+    items: []
   };
 
   let startRoom = mapService.getRoom(player.x, player.y);
@@ -36,6 +37,26 @@ function playerService($q, $log, mapService) {
 
       room = mapService.getRoom(player.x, player.y);
       room.hasPlayer = true;
+
+      //Right now, only the sword can be picked up.
+      if(room.contents && room.contents === 'S') {
+        player.items.push(room.contents);
+        delete room.contents;
+      }
+
+      if(room.contents && room.contents === 'D') {
+        if(player.items.indexOf('S') !== -1) {
+          //Player slays the dragon.
+          delete room.contents;
+          player.items.push('K'); // Dragon had the key
+        }
+        else {
+          //Player is killed by the dragon.
+          //TODO: How to notify the player that they died?
+          player.x = 0;
+          player.y = 0;
+        }
+      }
 
       //TODO: Q: Is there something more interesting to resolve?
       return resolve();
