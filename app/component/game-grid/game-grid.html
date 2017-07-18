@@ -1,0 +1,27 @@
+<section class="game-grid">
+  <div class="grid-row" ng-repeat="row in gameGridCtrl.getGrid()">
+    <div ng-repeat="cell in row" class="grid-cell">
+      <div class="stud"></div>
+      <div class="side-top" ng-class="cell.sides.top"></div>
+      <div class="stud"></div>
+
+      <div class="side-left" ng-class="cell.sides.left"></div>
+      <div class="cell-container">
+        <div class="cell-contents"
+          ng-show="cell.contents">
+          {{ cell.contents }}
+        </div>
+        <div class="player-icon" ng-show="cell.hasPlayer">
+          <div class="player-items">
+            {{ gameGridCtrl.player.items.join() }}
+          </div>
+        </div>
+      </div>
+      <div class="side-right" ng-class="cell.sides.right"></div>
+
+      <div class="stud"></div>
+      <div class="side-bottom" ng-class="cell.sides.bottom"></div>
+      <div class="stud"></div>
+    </div>
+  </div>
+</section>

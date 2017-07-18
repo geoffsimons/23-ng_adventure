@@ -1,0 +1,24 @@
+.room {
+  width: 50vw;
+  height: 50vw;
+  margin: 0 auto;
+  background: #b1b1b1;
+}
+
+$border-room: 4vw solid #222;
+
+.wt {
+  border-top: $border-room;
+}
+
+.wr {
+  border-right: $border-room;
+}
+
+.wb {
+  border-bottom: $border-room;
+}
+
+.wl {
+  border-left: $border-room;
+}

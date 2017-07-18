@@ -1,0 +1,79 @@
+$grid-size: 50vw;
+$border-size: 2vw;
+$cell-size: $grid-size / 3;
+$content-size: $cell-size - (2 * $border-size);
+$wall-color: #444;
+$door-color: #742;
+
+.game-grid {
+  width: $grid-size;
+  height: $grid-size;
+  margin: 0 auto;
+  background: #b1b1b1;
+}
+
+.grid-cell {
+  width: $cell-size;
+  height: $cell-size;
+  float:left;
+}
+
+.stud {
+  height: $border-size;
+  width: $border-size;
+  float: left;
+  background: $wall-color;
+}
+
+.side-top, .side-bottom {
+  width: $content-size;
+  height: $border-size;
+  float: left;
+}
+
+.side-left, .side-right {
+  width: $border-size;
+  height: $content-size;
+  float: left;
+}
+
+.cell-container {
+  width: $content-size;
+  height: $content-size;
+  float: left;
+  position: relative;
+}
+
+.player-icon {
+  width: $content-size;
+  height: $content-size;
+  border-radius: $content-size / 2;
+  background: red;
+  position: absolute;
+}
+
+.player-items, .cell-contents {
+  position: absolute;
+  top: $content-size / 2;
+  left: $content-size / 2;
+  transform: translate(-50%,-50%);
+  font-size: 3vw;
+}
+
+.wall {
+  background: $wall-color;
+}
+
+.door {
+  background: $door-color;
+}
+
+.junk {
+  box-sizing: border-box;
+  top: $border-size;
+  left: $border-size;
+  width: ($grid-size / 3) - ($border-size * 2);
+  height: ($grid-size / 3) - ($border-size * 2);
+  width: 10vw;
+  height: 10vw;
+}

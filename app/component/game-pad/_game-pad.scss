@@ -1,0 +1,31 @@
+@import "../../scss/lib/theme/vars";
+
+.game-pad {
+  width: 21vw;
+  height: 21vw;
+  position: relative;
+
+  button {
+    position: absolute;
+    width: 7vw;
+    height: 7vw;
+  }
+}
+
+.nav-top {
+  left: 7vw;
+}
+
+.nav-bottom {
+  left: 7vw;
+  bottom: 0;
+}
+
+.nav-left {
+  top: 7vw;
+}
+
+.nav-right {
+  top: 7vw;
+  right: 0;
+}
